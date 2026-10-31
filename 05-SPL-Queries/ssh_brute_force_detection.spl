@@ -1,0 +1,6 @@
+index=main source="/var/log/auth.log" "Failed password"
+| rex "Failed password for (invalid user )?(?<target_user>\S+) from (?<source_ip>\S+)"
+| bin _time span=5m
+| stats count as failures by _time source_ip target_user
+| where failures >= 3
+| sort - failures

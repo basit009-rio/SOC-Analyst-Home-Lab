@@ -1,0 +1,9 @@
+# SSH authentication records
+index=main source="/var/log/auth.log" sshd
+| table _time host source _raw
+| sort - _time
+
+# Failed password records
+index=main source="/var/log/auth.log" "Failed password"
+| table _time host _raw
+| sort - _time
