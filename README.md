@@ -56,4 +56,4 @@ All tests described here were performed in the user's own lab against a test acc
 - Build dashboards and add further Linux/Windows detections.
 - Document additional incident response exercises.
 
-**Author:** Basit
+**Author:** Basit Shafi
